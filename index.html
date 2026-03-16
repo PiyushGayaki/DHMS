@@ -16,19 +16,19 @@
     }
 
     :root {
-      --blue: #3b82f6;
-      --indigo: #6366f1;
-      --violet: #8b5cf6;
-      --cyan: #06b6d4;
-      --green: #10b981;
-      --rose: #f43f5e;
-      --amber: #f59e0b;
-      --slate: #0b1121;
-      --text: #f8fafc;
-      --subtext: #94a3b8;
-      --border: rgba(255, 255, 255, 0.08);
-      --glass-bg: rgba(30, 41, 59, 0.5);
-      --glass-blur: blur(12px);
+      --blue: #2563eb;
+      --indigo: #4338ca;
+      --violet: #6d28d9;
+      --cyan: #0891b2;
+      --green: #059669;
+      --rose: #be123c;
+      --amber: #b45309;
+      --slate: #f8fafc;
+      --text: #0f172a;
+      --subtext: #475569;
+      --border: rgba(67, 56, 202, 0.08);
+      --glass-bg: rgba(255, 255, 255, 0.75);
+      --glass-blur: blur(16px);
     }
 
     html {
@@ -37,7 +37,7 @@
     }
 
     body {
-      background: var(--slate);
+      background: #fbfbfe;
       color: var(--text);
       overflow-x: hidden;
     }
@@ -48,13 +48,13 @@
       top: 0;
       width: 100%;
       z-index: 999;
-      background: rgba(11, 17, 33, .7);
+      background: rgba(255, 255, 255, .7);
       backdrop-filter: var(--glass-blur);
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid rgba(0,0,0,.04);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: .9rem 2.5rem;
+      padding: 1rem 3rem;
     }
 
     .logo {
@@ -74,13 +74,13 @@
     .nav-links a {
       color: var(--subtext);
       text-decoration: none;
-      font-size: .85rem;
+      font-size: .88rem;
       font-weight: 500;
-      transition: .25s
+      transition: .2s
     }
 
     .nav-links a:hover {
-      color: var(--text)
+      color: var(--indigo)
     }
 
     /* ── SLIDES ───────────────────────────────────────────── */
@@ -96,10 +96,11 @@
     #hero {
       position: relative;
       overflow: hidden;
-      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(99, 102, 241, .15) 0%, transparent 70%);
+      background: radial-gradient(circle at 50% 100%, rgba(67, 56, 202, .04), transparent 70%);
       text-align: center;
       flex-direction: column;
-      gap: 2rem;
+      gap: 2.5rem;
+      padding-top: 10rem;
     }
 
     #hero::before {
@@ -133,13 +134,14 @@
     }
 
     h1.hero-title {
-      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-size: clamp(2.8rem, 6vw, 5.2rem);
       font-weight: 900;
-      line-height: 1.07;
-      background: linear-gradient(135deg, #fff 30%, #6366f1 70%, #06b6d4);
+      line-height: 1.1;
+      background: linear-gradient(135deg, #0f172a 30%, #4338ca 70%, #0891b2);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: fadeUp .7s .1s ease both;
+      letter-spacing: -0.02em;
     }
 
     .hero-sub {
@@ -205,7 +207,7 @@
     .s1 {
       width: 500px;
       height: 500px;
-      background: rgba(99, 102, 241, .15);
+      background: rgba(67, 56, 202, .08);
       top: -150px;
       left: -100px;
       animation-delay: 0s
@@ -214,7 +216,7 @@
     .s2 {
       width: 400px;
       height: 400px;
-      background: rgba(6, 182, 212, .1);
+      background: rgba(8, 145, 178, .06);
       bottom: -100px;
       right: -80px;
       animation-delay: -4s
@@ -228,10 +230,11 @@
       justify-content: center;
       background: var(--glass-bg);
       backdrop-filter: var(--glass-blur);
-      border: 1px solid var(--border);
+      border: 1px solid rgba(0,0,0,.04);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.03);
       border-radius: 20px;
       overflow: hidden;
-      margin-top: 3rem;
+      margin-top: 3.5rem;
       animation: fadeUp .7s .4s ease both;
     }
 
@@ -303,27 +306,19 @@
     .feat-card {
       background: var(--glass-bg);
       backdrop-filter: var(--glass-blur);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 2rem;
+      border: 1px solid rgba(0,0,0,.04);
+      border-radius: 24px;
+      padding: 2.5rem;
       transition: .35s;
       position: relative;
       overflow: hidden;
-    }
-
-    .feat-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top left, rgba(99, 102, 241, .08), transparent 60%);
-      opacity: 0;
-      transition: .35s;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.02);
     }
 
     .feat-card:hover {
-      border-color: rgba(99, 102, 241, .4);
+      border-color: var(--indigo);
       transform: translateY(-6px);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, .3)
+      box-shadow: 0 20px 60px rgba(67, 56, 202, 0.08)
     }
 
     .feat-card:hover::before {
@@ -370,16 +365,18 @@
     .role-card {
       background: var(--glass-bg);
       backdrop-filter: var(--glass-blur);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 2.5rem 2rem;
+      border: 1px solid rgba(0,0,0,.04);
+      border-radius: 28px;
+      padding: 3rem 2rem;
       text-align: center;
       transition: .35s;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.02);
     }
 
     .role-card:hover {
       transform: translateY(-8px);
-      border-color: rgba(99, 102, 241, .4);
+      border-color: var(--indigo);
+      box-shadow: 0 20px 60px rgba(67, 56, 202, 0.08)
     }
 
     .role-avatar {
@@ -452,8 +449,8 @@
 
     .tech-pill:hover {
       transform: scale(1.06);
-      border-color: rgba(99, 102, 241, .5);
-      background: rgba(99, 102, 241, .1)
+      border-color: var(--indigo);
+      background: rgba(67, 56, 202, 0.05)
     }
 
     .tech-pill span {
@@ -587,15 +584,17 @@
       flex-direction: column;
       text-align: center;
       gap: 2rem;
-      background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(99, 102, 241, .1) 0%, transparent 70%);
+      background: radial-gradient(circle at 50% 0%, rgba(67, 56, 202, 0.05), transparent 70%);
+      padding: 10rem 2rem;
     }
 
     .cta-glow {
-      font-size: clamp(2rem, 5vw, 4rem);
+      font-size: clamp(2.2rem, 5vw, 4.2rem);
       font-weight: 900;
-      background: linear-gradient(135deg, #fff, #6366f1, #06b6d4);
+      background: linear-gradient(135deg, #0f172a, #4338ca, #0891b2);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      letter-spacing: -0.01em;
     }
 
     .built-tag {
@@ -1276,6 +1275,7 @@
     © 2026 DHMS – Doctor Hospital Management System &nbsp;·&nbsp; Built with ❤️ using Python & Flask By Piyush Gayaki
   </footer>
 
+  <script>
     // ── Form Handling (Formspree) ────────────────────────────────
     function openModal(type) {
       const titles = {
