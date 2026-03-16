@@ -676,6 +676,59 @@
       margin: .8rem 0 1.5rem
     }
 
+    /* ── HERO BG IMAGE ────────────────────────────────────── */
+    #hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('images/hero.png') center/cover no-repeat;
+      opacity: .07;
+      pointer-events: none;
+      z-index: 0;
+    }
+    #hero > * { position: relative; z-index: 1; }
+
+    /* ── IMAGE GALLERY SECTION ────────────────────────────── */
+    #gallery {
+      flex-direction: column;
+      gap: 3.5rem;
+      background: linear-gradient(180deg, rgba(15,23,42,0) 0%, rgba(30,41,59,.4) 50%, rgba(15,23,42,0) 100%);
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      max-width: 1100px;
+      width: 100%;
+    }
+    @media(max-width:700px){ .gallery-grid { grid-template-columns: 1fr; } }
+    .gallery-card {
+      position: relative;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(99,102,241,.2);
+      aspect-ratio: 16/9;
+      cursor: pointer;
+      transition: .35s;
+    }
+    .gallery-card:hover { transform: translateY(-6px) scale(1.01); border-color: rgba(99,102,241,.55); box-shadow: 0 24px 60px rgba(0,0,0,.5); }
+    .gallery-card img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .5s ease;
+    }
+    .gallery-card:hover img { transform: scale(1.06); }
+    .gallery-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 1.5rem 1.4rem .9rem;
+      background: linear-gradient(to top, rgba(0,0,0,.85) 0%, transparent 100%);
+      color: #f8fafc;
+    }
+    .gallery-caption strong { display: block; font-size: 1rem; font-weight: 700; }
+    .gallery-caption span { font-size: .78rem; color: #94a3b8; }
+
     /* ── CONTACT MODAL ────────────────────────────────────── */
     .modal-overlay {
       position: fixed;
@@ -838,6 +891,46 @@
       <div class="stat">
         <div class="stat-num">∞</div>
         <div class="stat-lbl">Protocols</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMAGE GALLERY -->
+  <section id="gallery">
+    <div class="reveal" style="text-align:center">
+      <div class="section-label">Inside DHMS</div>
+      <h2 class="section-title">Built for Real Healthcare Environments</h2>
+      <div class="accent-line" style="margin:auto"></div>
+      <p class="section-sub" style="margin:auto">From the reception desk to the pharmacy — every corner of your clinic, managed seamlessly.</p>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-card">
+        <img src="images/reception.png" alt="Modern hospital reception" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Patient Registration & Reception</strong>
+          <span>Front desk staff manage patients and visits in real time</span>
+        </div>
+      </div>
+      <div class="gallery-card">
+        <img src="images/doctor.png" alt="Doctor using DHMS" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Doctor Dashboard & Prescriptions</strong>
+          <span>Digital consultation with smart prescription protocols</span>
+        </div>
+      </div>
+      <div class="gallery-card">
+        <img src="images/pharmacy.png" alt="Medical store pharmacy" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Pharmacy & Inventory Management</strong>
+          <span>Batch tracking, expiry alerts and auto stock updates</span>
+        </div>
+      </div>
+      <div class="gallery-card">
+        <img src="images/billing.png" alt="Hospital billing" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Billing & Financial Reports</strong>
+          <span>Full billing cycle with due tracking and daily revenue reports</span>
+        </div>
       </div>
     </div>
   </section>
