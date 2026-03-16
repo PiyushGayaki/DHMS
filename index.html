@@ -56,7 +56,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 0.8rem 3rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
     }
 
     .logo {
@@ -147,7 +147,7 @@
       animation: fadeUp 0.7s 0.1s ease both;
       letter-spacing: -0.02em;
     }
-    
+
     h1.hero-title span {
       background: linear-gradient(135deg, var(--indigo), var(--cyan));
       -webkit-background-clip: text;
@@ -198,7 +198,7 @@
       font-weight: 600;
       cursor: pointer;
       transition: 0.3s;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
     }
 
     .btn-ghost:hover {
@@ -217,7 +217,7 @@
       justify-content: center;
       background: #ffffff;
       border: 1px solid var(--border);
-      box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
       border-radius: 20px;
       overflow: hidden;
       margin-top: 4rem;
@@ -297,7 +297,7 @@
       transition: 0.35s;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
     }
 
     .feat-card:hover {
@@ -354,7 +354,7 @@
       padding: 3rem 2rem;
       text-align: center;
       transition: 0.35s;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
     }
 
     .role-card:hover {
@@ -676,7 +676,10 @@
       margin: .8rem 0 1.5rem
     }
 
-    #hero > * { position: relative; z-index: 1; }
+    #hero>* {
+      position: relative;
+      z-index: 1;
+    }
 
     /* ── IMAGE GALLERY SECTION ────────────────────────────── */
     #gallery {
@@ -685,6 +688,7 @@
       background: #fff;
       padding: 8rem 2rem;
     }
+
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -692,7 +696,13 @@
       max-width: 1100px;
       width: 100%;
     }
-    @media(max-width:700px){ .gallery-grid { grid-template-columns: 1fr; } }
+
+    @media(max-width:700px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .gallery-card {
       position: relative;
       border-radius: 22px;
@@ -702,30 +712,52 @@
       cursor: pointer;
       transition: .35s;
     }
-    .gallery-card:hover { transform: translateY(-6px) scale(1.01); border-color: rgba(99, 102, 241, .5); box-shadow: 0 24px 60px rgba(0, 0, 0, .5); }
+
+    .gallery-card:hover {
+      transform: translateY(-6px) scale(1.01);
+      border-color: rgba(99, 102, 241, .5);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, .5);
+    }
+
     .gallery-card img {
-      width: 100%; height: 100%;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       display: block;
       transition: transform .5s ease;
     }
-    .gallery-card:hover img { transform: scale(1.06); }
+
+    .gallery-card:hover img {
+      transform: scale(1.06);
+    }
+
     .gallery-caption {
       position: absolute;
-      bottom: 0; left: 0; right: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
       padding: 1.5rem 1.4rem .9rem;
       background: linear-gradient(to top, rgba(0, 0, 0, .85) 0%, transparent 100%);
       color: #fff;
     }
-    .gallery-caption strong { display: block; font-size: 1rem; font-weight: 700; }
-    .gallery-caption span { font-size: .78rem; color: #94a3b8; }
+
+    .gallery-caption strong {
+      display: block;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .gallery-caption span {
+      font-size: .78rem;
+      color: #94a3b8;
+    }
 
     /* ── CONTACT MODAL ────────────────────────────────────── */
     .modal-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(11, 17, 33, .6);
-      backdrop-filter: blur(15px);
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(8px);
       z-index: 2000;
       display: flex;
       align-items: center;
@@ -734,33 +766,38 @@
       pointer-events: none;
       transition: opacity .35s ease;
     }
+
     .modal-overlay.open {
       opacity: 1;
       pointer-events: all;
     }
+
     .modal-box {
-      background: rgba(15, 23, 42, 0.85);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(99, 102, 241, .3);
+      background: #ffffff;
+      border: 1px solid var(--border);
       border-radius: 28px;
-      padding: 2.8rem 2.5rem 2.5rem;
+      padding: 3rem 2.5rem 2.8rem;
       width: min(520px, calc(100vw - 2rem));
       position: relative;
       transform: translateY(40px) scale(.97);
-      transition: transform .4s cubic-bezier(.34,1.56,.64,1), opacity .35s ease;
+      transition: transform .4s cubic-bezier(.34, 1.56, .64, 1), opacity .35s ease;
       opacity: 0;
-      box-shadow: 0 40px 100px rgba(0, 0, 0, .6);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+      color: var(--text);
     }
+    .modal-box * { color: var(--text); }
+
     .modal-overlay.open .modal-box {
       transform: none;
       opacity: 1;
     }
+
     .modal-close {
       position: absolute;
       top: 1.2rem;
       right: 1.4rem;
-      background: rgba(255, 255, 255, .05);
-      border: 1px solid rgba(255, 255, 255, .1);
+      background: #f8fafc;
+      border: 1px solid var(--border);
       border-radius: 50%;
       width: 36px;
       height: 36px;
@@ -772,32 +809,73 @@
       font-size: 1rem;
       transition: .25s;
     }
-    .modal-close:hover { background: rgba(244, 63, 94, .15); color: #f43f5e; border-color: rgba(244, 63, 94, .4); }
-    .modal-label { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: #6366f1; margin-bottom: .4rem; }
-    .modal-title { font-size: 1.7rem; font-weight: 800; margin-bottom: .4rem; line-height: 1.2; }
-    .modal-sub { font-size: .875rem; color: #64748b; margin-bottom: 1.8rem; }
-    .form-group { margin-bottom: 1.2rem; }
-    .form-group label { display: block; font-size: .8rem; font-weight: 600; color: #94a3b8; margin-bottom: .45rem; }
+
+    .modal-close:hover {
+      background: rgba(244, 63, 94, .15);
+      color: #f43f5e;
+      border-color: rgba(244, 63, 94, .4);
+    }
+
+    .modal-label {
+      font-size: .7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: #6366f1;
+      margin-bottom: .4rem;
+    }
+
+    .modal-title {
+      font-size: 1.7rem;
+      font-weight: 800;
+      margin-bottom: .4rem;
+      line-height: 1.2;
+    }
+
+    .modal-sub {
+      font-size: .875rem;
+      color: #64748b;
+      margin-bottom: 1.8rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: .8rem;
+      font-weight: 600;
+      color: #94a3b8;
+      margin-bottom: .45rem;
+    }
+
     .form-group input,
     .form-group textarea {
       width: 100%;
-      background: rgba(255, 255, 255, .03);
-      border: 1px solid rgba(255, 255, 255, .1);
+      background: #fdfdff;
+      border: 1px solid #e2e8f0;
       border-radius: 12px;
-      padding: .8rem 1rem;
-      color: #fff;
-      font-size: .9rem;
+      padding: 0.9rem 1rem;
+      color: var(--text);
+      font-size: 0.95rem;
       font-family: inherit;
       outline: none;
-      transition: .25s;
+      transition: 0.25s;
       resize: vertical;
     }
+
     .form-group input:focus,
     .form-group textarea:focus {
       border-color: var(--indigo);
       box-shadow: 0 0 0 3px rgba(99, 102, 241, .15);
     }
-    .form-group input::placeholder, .form-group textarea::placeholder { color: #475569; }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #475569;
+    }
+
     .btn-send {
       width: 100%;
       padding: .95rem;
@@ -816,9 +894,19 @@
       gap: .6rem;
       box-shadow: 0 4px 20px rgba(79, 70, 229, 0.2);
     }
-    .btn-send:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 0 45px rgba(99,102,241,.6); }
-    .btn-send:disabled { opacity: .6; cursor: not-allowed; }
-    .modal-success, .modal-error {
+
+    .btn-send:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(79, 70, 229, 0.4);
+    }
+
+    .btn-send:disabled {
+      opacity: .6;
+      cursor: not-allowed;
+    }
+
+    .modal-success,
+    .modal-error {
       display: none;
       padding: 1rem 1.2rem;
       border-radius: 12px;
@@ -827,11 +915,35 @@
       margin-top: 1rem;
       text-align: center;
     }
-    .modal-success { background: rgba(16,185,129,.12); border: 1px solid rgba(16,185,129,.3); color: #6ee7b7; }
-    .modal-error   { background: rgba(244,63,94,.12);  border: 1px solid rgba(244,63,94,.3);  color: #fda4af; }
+
+    .modal-success {
+      background: rgba(16, 185, 129, .12);
+      border: 1px solid rgba(16, 185, 129, .3);
+      color: #6ee7b7;
+    }
+
+    .modal-error {
+      background: rgba(244, 63, 94, .12);
+      border: 1px solid rgba(244, 63, 94, .3);
+      color: #fda4af;
+    }
+
     /* ── FORMSPREE LOADING ──────────────────────────────── */
-    .spinner { width:18px; height:18px; border:2px solid rgba(255,255,255,.3); border-top-color:#fff; border-radius:50%; animation:spin .6s linear infinite; display:none; }
-    @keyframes spin { to { transform: rotate(360deg); } }
+    .spinner {
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(255, 255, 255, .3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin .6s linear infinite;
+      display: none;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
   </style>
 </head>
 
@@ -892,7 +1004,8 @@
       <div class="section-label">Inside DHMS</div>
       <h2 class="section-title">Built for Real Healthcare Environments</h2>
       <div class="accent-line" style="margin:auto"></div>
-      <p class="section-sub" style="margin:auto">From the reception desk to the pharmacy — every corner of your clinic, managed seamlessly.</p>
+      <p class="section-sub" style="margin:auto">From the reception desk to the pharmacy — every corner of your clinic,
+        managed seamlessly.</p>
     </div>
     <div class="gallery-grid reveal">
       <div class="gallery-card">
@@ -1196,8 +1309,10 @@
       offline-first hospital management system.
       Designed for small to mid-sized clinics. Zero cloud dependency. Zero subscription fees.</p>
     <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
-      <button class="btn-primary" style="font-size:1.1rem;padding:1rem 2.5rem" onclick="openModal('demo')">🚀 Request a Demo</button>
-      <button class="btn-ghost" style="font-size:1.1rem;padding:1rem 2.5rem" onclick="openModal('docs')">📄 View Documentation</button>
+      <button class="btn-primary" style="font-size:1.1rem;padding:1rem 2.5rem" onclick="openModal('demo')">🚀 Request a
+        Demo</button>
+      <button class="btn-ghost" style="font-size:1.1rem;padding:1rem 2.5rem" onclick="openModal('docs')">📄 View
+        Documentation</button>
     </div>
     <div style="display:flex;gap:3rem;justify-content:center;margin-top:1.5rem;flex-wrap:wrap">
       <div style="text-align:center">
@@ -1234,7 +1349,8 @@
         </div>
         <div class="form-group">
           <label for="cf-note">Message / Note</label>
-          <textarea id="cf-note" name="message" rows="3" placeholder="Tell us about your clinic or what you need…"></textarea>
+          <textarea id="cf-note" name="message" rows="3"
+            placeholder="Tell us about your clinic or what you need…"></textarea>
         </div>
         <button type="submit" class="btn-send" id="sendBtn">
           <div class="spinner" id="spinner"></div>
@@ -1243,7 +1359,7 @@
       </form>
 
       <div class="modal-success" id="successMsg">✅ Message sent! We'll reach out to you soon.</div>
-      <div class="modal-error"   id="errorMsg">❌ Something went wrong. Please try again or WhatsApp us directly.</div>
+      <div class="modal-error" id="errorMsg">❌ Something went wrong. Please try again or WhatsApp us directly.</div>
     </div>
   </div>
 
@@ -1255,15 +1371,15 @@
     // ── Form Handling (Formspree) ────────────────────────────────
     function openModal(type) {
       const titles = {
-        demo : { label:'Demo Request', title:'Request a Demo',          sub:'Tell us about your clinic — we\'ll set up a live walkthrough for you.' },
-        docs : { label:'Documentation', title:'Get the Documentation',  sub:'Drop your details and we\'ll send you the full setup guide and docs.' }
+        demo: { label: 'Demo Request', title: 'Request a Demo', sub: 'Tell us about your clinic — we\'ll set up a live walkthrough for you.' },
+        docs: { label: 'Documentation', title: 'Get the Documentation', sub: 'Drop your details and we\'ll send you the full setup guide and docs.' }
       };
       const t = titles[type] || titles.demo;
       document.getElementById('modalLabel').textContent = t.label;
       document.getElementById('modalTitle').textContent = t.title;
-      document.getElementById('modalSub').textContent   = t.sub;
+      document.getElementById('modalSub').textContent = t.sub;
       document.getElementById('successMsg').style.display = 'none';
-      document.getElementById('errorMsg').style.display   = 'none';
+      document.getElementById('errorMsg').style.display = 'none';
       document.getElementById('contactForm').reset();
       document.getElementById('sendBtn').disabled = false;
       document.getElementById('sendTxt').textContent = '📨 Send Message';
@@ -1289,12 +1405,12 @@
       const btn = document.getElementById('sendBtn');
       const spinner = document.getElementById('spinner');
       const txt = document.getElementById('sendTxt');
-      
+
       btn.disabled = true;
       spinner.style.display = 'block';
       txt.textContent = 'Sending…';
       document.getElementById('successMsg').style.display = 'none';
-      document.getElementById('errorMsg').style.display   = 'none';
+      document.getElementById('errorMsg').style.display = 'none';
 
       const formData = new FormData(e.target);
       formData.append('subject', document.getElementById('modalTitle').textContent);
@@ -1322,7 +1438,7 @@
         } else {
           throw new Error('Formspree response not ok');
         }
-      } catch(err) {
+      } catch (err) {
         console.error('Submission error:', err);
         spinner.style.display = 'none';
         btn.disabled = false;
