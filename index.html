@@ -944,6 +944,79 @@
         transform: rotate(360deg);
       }
     }
+
+    /* ── MOBILE RESPONSIVENESS ─────────────────────────────── */
+    @media (max-width: 768px) {
+      nav {
+        padding: 0.8rem 1.5rem;
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+
+      .nav-links {
+        gap: 1rem;
+        font-size: 0.75rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      section {
+        padding: 4rem 1.5rem 3rem;
+      }
+
+      #hero {
+        padding: 6rem 1.5rem 4rem;
+      }
+
+      h1.hero-title {
+        font-size: 2.5rem;
+      }
+
+      .hero-sub {
+        font-size: 1rem;
+      }
+
+      .stats-bar {
+        flex-direction: column;
+        margin-top: 2.5rem;
+        width: 100%;
+        border-radius: 12px;
+      }
+
+      .stat {
+        border-right: none;
+        border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+        padding: 1rem;
+      }
+
+      .stat:last-child {
+        border-bottom: none;
+      }
+
+      .features-grid, .roles-grid, .highlights-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feat-card, .role-card, .hl-card {
+        padding: 2rem 1.5rem;
+      }
+
+      .cta-glow {
+        font-size: 2.2rem;
+      }
+
+      #cta {
+        padding: 6rem 1.5rem;
+      }
+
+      .modal-box {
+        padding: 2.5rem 1.5rem 1.5rem;
+      }
+
+      .modal-title {
+        font-size: 1.4rem;
+      }
+    }
   </style>
 </head>
 
