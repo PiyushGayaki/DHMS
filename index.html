@@ -536,6 +536,9 @@
     }
 
     .hl-card {
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--border);
       border-radius: 20px;
       padding: 2rem;
       position: relative;
@@ -744,8 +747,8 @@
     .modal-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,.65);
-      backdrop-filter: blur(8px);
+      background: rgba(11, 17, 33, .6);
+      backdrop-filter: blur(15px);
       z-index: 2000;
       display: flex;
       align-items: center;
@@ -1273,10 +1276,7 @@
     © 2026 DHMS – Doctor Hospital Management System &nbsp;·&nbsp; Built with ❤️ using Python & Flask By Piyush Gayaki
   </footer>
 
-    // ── EmailJS REMOVED ─────────────────────────────────────
-    // Form is now handled via Formspree AJAX
-
-    // ── Modal helpers ───────────────────────────────────────
+    // ── Form Handling (Formspree) ────────────────────────────────
     function openModal(type) {
       const titles = {
         demo : { label:'Demo Request', title:'Request a Demo',          sub:'Tell us about your clinic — we\'ll set up a live walkthrough for you.' },
