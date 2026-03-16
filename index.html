@@ -97,13 +97,13 @@
     /* ── HERO ─────────────────────────────────────────────── */
     #hero {
       position: relative;
-      background: radial-gradient(circle at 50% 100%, rgba(79, 70, 229, 0.03), transparent 70%);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
       text-align: center;
-      padding: 6rem 2rem 5rem;
+      padding: 4.5rem 2rem 5rem;
+      background: #fff;
       overflow: hidden;
     }
 
@@ -207,32 +207,7 @@
       color: var(--indigo);
     }
 
-    /* floating shapes */
-    .shape {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(70px);
-      pointer-events: none;
-      animation: float 8s ease-in-out infinite
-    }
-
-    .s1 {
-      width: 500px;
-      height: 500px;
-      background: rgba(79, 70, 229, 0.04);
-      top: -150px;
-      left: -100px;
-      animation-delay: 0s
-    }
-
-    .s2 {
-      width: 400px;
-      height: 400px;
-      background: rgba(8, 145, 178, 0.03);
-      bottom: -100px;
-      right: -80px;
-      animation-delay: -4s
-    }
+    /* ── STATS BAR ────────────────────────────────────────── */
 
     /* ── STATS BAR ────────────────────────────────────────── */
     .stats-bar {
@@ -701,16 +676,6 @@
       margin: .8rem 0 1.5rem
     }
 
-    /* ── HERO BG IMAGE ────────────────────────────────────── */
-    #hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url('images/hero.png') center/cover no-repeat;
-      opacity: 0.04;
-      pointer-events: none;
-      z-index: 0;
-    }
     #hero > * { position: relative; z-index: 1; }
 
     /* ── IMAGE GALLERY SECTION ────────────────────────────── */
@@ -887,8 +852,6 @@
 
   <!-- HERO -->
   <section id="hero">
-    <div class="shape s1"></div>
-    <div class="shape s2"></div>
     <div class="hero-badge"><span class="dot"></span> Now Available as Desktop Executable</div>
     <h1 class="hero-title">Doctor Hospital<br><span>Management System</span></h1>
     <p class="hero-sub">A complete, offline-first clinic management solution — patients, visits, prescriptions, IV
