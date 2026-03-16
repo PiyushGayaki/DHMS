@@ -953,14 +953,14 @@
     .mobile-menu {
       position: fixed;
       inset: 0;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(20px);
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(15px);
       z-index: 2000;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 2rem;
+      gap: 1.8rem;
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -974,7 +974,7 @@
     }
 
     .mobile-menu a {
-      font-size: 1.8rem;
+      font-size: 1.35rem;
       font-weight: 700;
       color: var(--text);
       text-decoration: none;
@@ -1085,7 +1085,7 @@
   </nav>
 
   <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu" id="mobileMenu" onclick="handleMenuOverlayClick(event)">
     <a href="#hero" onclick="toggleMobileMenu()">Home</a>
     <a href="#features" onclick="toggleMobileMenu()">Features</a>
     <a href="#roles" onclick="toggleMobileMenu()">Roles</a>
@@ -1507,6 +1507,12 @@
       const isOpen = menu.classList.toggle('open');
       toggle.textContent = isOpen ? '✕' : '☰';
       document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
+
+    function handleMenuOverlayClick(e) {
+      if (e.target === document.getElementById('mobileMenu')) {
+        toggleMobileMenu();
+      }
     }
 
     // ── Form Handling (Formspree) ────────────────────────────────
